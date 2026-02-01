@@ -71,7 +71,7 @@ fi
 
 # Enable color support for ls. See .bash_aliases for aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r "$HOME/.dircolors" && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
 fi
 
 # colored GCC warnings and errors
@@ -82,8 +82,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f "$HOME/.bash_aliases" ]; then
+    . "$HOME/.bash_aliases"
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -99,16 +99,16 @@ fi
 
 
 # Haskell installer.
-if [[ -f "~/.ghcup/env" ]]; then
-    source "~/.ghcup/env"
+if [[ -f "$HOME/.ghcup/env" ]]; then
+    source "$HOME/.ghcup/env"
 fi
 
 # Enable vim mode
 # set -o vi
 
 # Enable cargo packages
-if [[ -f "~/.cargo/env" ]]; then
-    source "~/.cargo/env"
+if [[ -f "$HOME/.cargo/env" ]]; then
+    source "$HOME/.cargo/env"
 fi
 
 export NVM_DIR="$HOME/.nvm"
