@@ -2,9 +2,10 @@
 
 set -eu
 
-ln -s $(realpath .bash_aliases)     ~/.bash_aliases   
-ln -s $(realpath .bash_completion)  ~/.bash_completion
-ln -s $(realpath .bash_logout)      ~/.bash_logout    
-ln -s $(realpath .bash_profile)     ~/.bash_profile   
-ln -s $(realpath .bashrc)           ~/.bashrc         
+ln -sf $(realpath .bash_aliases)     ~/.bash_aliases   
+ln -sf $(realpath .bash_completion)  ~/.bash_completion
+ln -sf $(realpath .bash_environment) ~/.bash_environment
+ln -sf $(realpath .bash_logout)      ~/.bash_logout    
+ln -sf $(realpath .bash_profile)     ~/.bash_profile   
+ln -sf $(realpath .bashrc)           ~/.bashrc         
 

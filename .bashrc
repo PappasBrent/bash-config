@@ -5,6 +5,14 @@
 # If we are not running interactively, stop processing.
 if [[ ! "$-" =~ "i" ]]; then exit 0; fi
 
+# If we are in a non-login shell, then changes to environment variables were
+# not loaded. Apply them here.
+if ! shopt login_shell >/dev/null; then
+    if [[ -f "$HOME/.bash_environment" ]]; then
+        . "$HOME/.bash_environment"
+    fi
+fi
+
 # Prevent adding duplicate lines or lines starting with space to history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth

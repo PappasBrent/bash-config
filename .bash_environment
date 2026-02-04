@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Changes to PATH and other environment variables.
+# We put these changes in this separate file, and not directly in
+# ~/.bash_profile, so that we can source this file from ~/.bashrc if we are
+# running from a non-login shell (as that would skip executing ~/.bash_profile,
+# and only run ~/.bashrc).
+
+# Ruby Gems.
+if [[ -d "$HOME/.gem/ruby/3.2.0/gems/bin" ]]; then
+    export PATH="$PATH:$HOME/.gem/ruby/3.2.0/gems/bin/"
+fi
+
+# Technically this should go in .bashrc since it's not modifying PATH
+# veriables, but since it's related to the above assignment I include it here.
+if [[ -d "$HOME/.gem/ruby/3.2.0/gems/" ]]; then
+    export GEM_HOME="$HOME/.gem/ruby/3.2.0/gems/"
+    export GEM_PATH="$HOME/.gem/ruby/3.2.0/gems/"
+fi
