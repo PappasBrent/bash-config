@@ -123,8 +123,6 @@ export EDITOR=vim
 #    exec tmux
 # fi
 
-# Ruby gems (see .bash_profile for PATH changes)
-
 # Center new windows by default
 if command -v gsettings >/dev/null 2>&1; then
     gsettings set org.gnome.mutter center-new-windows true
